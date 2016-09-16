@@ -15,15 +15,16 @@
      <h1>Lunch Checker</h1>
 
          <div class="form-group">
+             <span>Note: Empty items (like ,, and , ,) does not consider as a dish.</span>
              <input id="lunch-menu" type="text"
              placeholder="list comma separated dishes you usually have for lunch"
-             class="form-control" ng-model="dishes">
+             class="form-control" ng-model="dishes" style="border: 1px solid {{color}}">
          </div>
          <div class="form-group">
              <button class="btn btn-default" ng-click="checkIfTooMuch()">Check If Too Much</button>
          </div>
-         <div class="form-group message">
-           <!-- Your message can go here. -->
+         <div class="form-group message" style="color: {{color}}">
+           {{message}}
          </div>
    </div>
 
