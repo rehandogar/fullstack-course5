@@ -1,0 +1,1 @@
+This directory contains (Coursera Single Page Web Application with AngularJS course) Module 2 Assignment solution. Assignment Requirements are given in assignment starter code directory at assignments/assignment2/Assignment-2.md file.
