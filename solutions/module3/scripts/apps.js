@@ -9,9 +9,22 @@
   function NarrowItDownController(MenuSearchService) {
     var NarrowCtrl = this;
     NarrowCtrl.searchTerm= '';
-    NarrowCtrl.foundItems = '';
+    NarrowCtrl.matchedItems = [];
     NarrowCtrl.getMatchedMenuItems = function () {
-        foundItems = MenuSearchService.getMatchedMenuItems(NarrowCtrl.searchTerm);
+        var promise = MenuSearchService.getMatchedMenuItems();
+        promise.then(function (result) {
+          var foundItems = [];
+          result.data.menu_items.forEach(function matchItems(currentValue) {
+            if(currentValue.description.match(NarrowCtrl.searchTerm)) {
+              foundItems.push(currentValue);
+            }
+          });
+          NarrowCtrl.matchedItems = foundItems;
+          console.log(NarrowCtrl.matchedItems);
+        })
+        .catch(function (error) {
+          console.log("search data request is not successful!");
+        });
     }
   }
 
@@ -19,31 +32,19 @@
   function MenuSearchService($http) {
     var service = this;
 
-    service.getMatchedMenuItems = function(searchTerm) {
+    service.getMatchedMenuItems = function() {
       var response = $http({
         method: 'GET',
         url: ('https://davids-restaurant.herokuapp.com/menu_items.json')
-      }).then(function (result) {
-        var foundItems = [];
-        result.data.menu_items.forEach(function matchItems(currentValue) {
-          if(currentValue.description.match(searchTerm)) {
-            foundItems.push(currentValue);
-          }
-        });
-        console.log(foundItems);
-        return foundItems;
-      })
-      .catch(function (error) {
-        console.log("search data request is not successful!");
       });
 
       return response;
-    }
+    };
   }
 
   function FoundItems() {
     var ddo = {
-
+      templateUrl: 'foundItems.html'
     };
 
     return ddo;
