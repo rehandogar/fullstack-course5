@@ -13,9 +13,9 @@
     NarrowCtrl.matchedItems = [];
 
     NarrowCtrl.removeItem = function (index) {
-      NarrowCtrl.splice(index, 1);
+      NarrowCtrl.matchedItems.splice(index, 1);
     }
-    
+
     NarrowCtrl.getMatchedMenuItems = function () {
       if (NarrowCtrl.searchTerm) {
         NarrowCtrl.emptySearch = '';
