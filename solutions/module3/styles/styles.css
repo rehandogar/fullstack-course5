@@ -5,9 +5,15 @@ input[type="text"] {
   width: 200px;
   float: left;
 }
+
 .narrow-button {
   float: left;
   margin-left: 10px;
+}
+
+.middle-align {
+  vertical-align: middle;
+  display: inline-block;
 }
 .loader {
   display: none;

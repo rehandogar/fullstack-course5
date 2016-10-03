@@ -9,22 +9,33 @@
   function NarrowItDownController(MenuSearchService) {
     var NarrowCtrl = this;
     NarrowCtrl.searchTerm= '';
+    NarrowCtrl.emptySearch = '';
     NarrowCtrl.matchedItems = [];
+
+    NarrowCtrl.removeItem = function (index) {
+      NarrowCtrl.splice(index, 1);
+    }
+    
     NarrowCtrl.getMatchedMenuItems = function () {
-        var promise = MenuSearchService.getMatchedMenuItems();
-        promise.then(function (result) {
-          var foundItems = [];
-          result.data.menu_items.forEach(function matchItems(currentValue) {
-            if(currentValue.description.match(NarrowCtrl.searchTerm)) {
-              foundItems.push(currentValue);
-            }
+      if (NarrowCtrl.searchTerm) {
+        NarrowCtrl.emptySearch = '';
+          var promise = MenuSearchService.getMatchedMenuItems();
+          promise.then(function (result) {
+            var foundItems = [];
+            result.data.menu_items.forEach(function matchItems(currentValue) {
+              if(currentValue.description.match(NarrowCtrl.searchTerm)) {
+                foundItems.push(currentValue);
+              }
+            });
+            NarrowCtrl.matchedItems = foundItems;
+            console.log(NarrowCtrl.matchedItems);
+          })
+          .catch(function (error) {
+            console.log("search data request is not successful!");
           });
-          NarrowCtrl.matchedItems = foundItems;
-          console.log(NarrowCtrl.matchedItems);
-        })
-        .catch(function (error) {
-          console.log("search data request is not successful!");
-        });
+        } else {
+          NarrowCtrl.emptySearch = 'Nothing found';
+        }
     }
   }
 

@@ -1,5 +1,14 @@
 <div class="jumbotron">
-  <h3>{{item.name}} (Short Name:{{item.short_name}})</h3>
-  <p>{{item.description}}</p>
+  <div class="row">
+    <div class="col-md-8 text-left middle-align">
+      <h3>{{item.name}} (Short Name:{{item.short_name}})</h3>
+    </div>
+    <div class="col-md-4 text-right middle-align">
+      <button class="btn btn-primary" ng-click="NarrowCtrl.removeItem($index);">Don't want this one!</button>
+    </div>
+  </div>
+  <div class="row">
+    <p>{{item.description}}</p>
+  </div>
   <hr />
 </div>
