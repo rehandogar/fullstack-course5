@@ -1,15 +1,41 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html ng-app='MenuApp'>
   <head>
-    <title>Narrow Down Your Menu Choice</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <meta charset="utf-8">
     <link rel="stylesheet" href="styles/styles.css">
+    <title>Menu App</title>
   </head>
-<body ng-app="MenuApp">
-  <ui-view></ui-view>
-  <script src="scripts/angular.min.js"></script>
-  <script src="scripts/angular-ui-router.min.js"></script>
-  <script src="scripts/apps.js"></script>
-</body>
+  <body>
+    <h1>Welcome to our Restaurant</h1>
+
+    <ui-view></ui-view>
+
+    <loading-spinner></loading-spinner>
+
+    <!-- Libraries -->
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-ui-router.min.js"></script>
+
+    <!-- Modules -->
+    <script src="scripts/menu.module.js"></script>
+    <script src="scripts/data.module.js"></script>
+
+    <!-- Routes -->
+    <script src="scripts/routes.js"></script>
+
+    <script src="scripts/menudata.service.js"></script>
+
+    <!-- 'ShoppingList' module artifacts -->
+    <script src="scripts/categories.component.js"></script>
+    <script src="scripts/categories.controller.js"></script>
+
+    <script src="scripts/items.component.js"></script>
+    <script src="scripts/items.controller.js"></script>
+
+    <!-- <script src="src/shoppinglist/item-detail.controller.js"></script> -->
+
+    <!-- 'Spinner' module artifacts -->
+
+
+  </body>
 </html>

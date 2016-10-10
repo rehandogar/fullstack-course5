@@ -1,3 +1,6 @@
-<h1>
-  Items Page
-</h1>
+<ul>
+  <li ng-repeat="item in $ctrl.items">
+    <strong>{{ item.name }} - {{ item.short_name }}</strong><br />
+    {{ item.description }}
+  </li>
+</ul>
