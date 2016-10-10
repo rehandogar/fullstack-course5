@@ -3,7 +3,7 @@
 
 angular.module('MenuApp')
 .component('items', {
-  templateUrl: '/items.html',
+  templateUrl: 'fullstack-course5/solutions/module4/items.html',
   bindings: {
     items: '<'
   }
