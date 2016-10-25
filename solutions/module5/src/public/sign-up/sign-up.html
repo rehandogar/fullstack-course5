@@ -1,6 +1,6 @@
 <div class="container well well-lg">
   <div class="row">
-    <form novalidate>
+    <form name="signUp" novalidate>
       <div class="form-group">
         <label>First Name(*):</label>
         <input type='text' class="form-control" ng-model="firstName" required/>
@@ -16,6 +16,11 @@
       <div class="form-group">
         <label>Phone Number(*):</label>
         <input type="number" class="form-control" ng-model="phoneNumber" required/>
+      </div>
+      <div class="form-group">
+        <label>Menu Number(*):</label>
+        <input type="text" class="form-control" ng-model="menuNumber"
+        ng-maxlength="2" required/>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary btn-block">Submit</button>
