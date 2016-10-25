@@ -112,18 +112,18 @@ h3.menu-item-title {
   font-style: italic;
 }
 /* END SINGLE CATEGORY PAGE */
-input.ng-pristine {
-    border:1px solid transparent;
-}
+/* START SIGN UP VIEW */
 input.ng-invalid {
     border:1px solid red;
 }
 input.ng-valid {
     border:1px solid green;
 }
-input.ng-dirty {
-    border:1px solid grey;
+.well label {
+  color: #222;
 }
+/* END SIGN UP VIEW */
+
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {
