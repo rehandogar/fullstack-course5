@@ -3,28 +3,27 @@
     <form name="signUp" novalidate>
       <div class="form-group">
         <label>First Name(*):</label>
-        <input type='text' class="form-control" ng-model="firstName" required/>
+        <input type='text' class="form-control" ng-model="signUpCtrl.firstName" required/>
       </div>
       <div class="form-group">
         <label>Last Name(*):</label>
-        <input type="text" class="form-control" ng-model="lastName" required/>
+        <input type="text" class="form-control" ng-model="signUpCtrl.lastName" required/>
       </div>
       <div class="form-group">
         <label>Email(*):</label>
-        <input type="email" class="form-control" ng-model="email" required/>
+        <input type="email" class="form-control" ng-model="signUpCtrl.email" required/>
       </div>
       <div class="form-group">
         <label>Phone Number(*):</label>
-        <input type="number" class="form-control" ng-model="phoneNumber" required/>
+        <input type="number" class="form-control" ng-model="signUpCtrl.phoneNumber" required/>
       </div>
       <div class="form-group">
         <label>Menu Number(*):</label>
-        <input type="text" class="form-control" ng-model="menuNumber"
-        ng-change="checkShortName()" required/>
+        <input type="text" class="form-control" ng-model="signUpCtrl.menuNumber" required/>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary btn-block"
-        ng-click="">Submit</button>
+        ng-click="signUpCtrl.checkSignUp()">Submit</button>
       </div>
     </form>
   </div>
