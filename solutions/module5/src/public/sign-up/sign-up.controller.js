@@ -15,7 +15,7 @@
               if (currentValue.short_name === $ctrl.menuNumber) {
                 SignUpService.setSignUp($ctrl.firstName,$ctrl.lastName,$ctrl.email,$ctrl.phoneNumber,currentValue);
               } else {
-                
+
               }
             });
         })

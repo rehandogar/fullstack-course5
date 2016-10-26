@@ -19,7 +19,10 @@
       </div>
       <div class="form-group">
         <label>Menu Number(*):</label>
-        <input type="text" class="form-control" ng-model="signUpCtrl.menuNumber" required/>
+        <input type="text" class="form-control" ng-model="signUpCtrl.menuNumber"
+        name="menuNumber" required/>{{menuNumber}}<br />
+        <span ng-show="signUp.menuNumber.$pending.shortname">Checking if this short name exists...</span>
+        <span ng-show="form.menuNumber.$error.shortname">This short name is already taken!</span>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary btn-block"
