@@ -20,10 +20,11 @@
       <div class="form-group">
         <label>Menu Number(*):</label>
         <input type="text" class="form-control" ng-model="menuNumber"
-        ng-maxlength="2" required/>
+        ng-change="checkShortName()" required/>
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        <button type="submit" class="btn btn-primary btn-block"
+        ng-click="">Submit</button>
       </div>
     </form>
   </div>

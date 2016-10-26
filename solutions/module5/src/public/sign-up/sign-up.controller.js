@@ -7,6 +7,14 @@
   SignUpController.$inject = ["SignUpService"];
   function SignUpController(SignUpService) {
     var $ctrl = this;
-    $ctrl.isSignedUp = false; // set this flag in service to share it with profile ctrl!!
+    $ctrl.checkShortName = function (menuNumber) {
+      var promise = SignUpService.getShortName();
+      promise.then(function (result) {
+        console.log(result);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+    }
   }
 }());
