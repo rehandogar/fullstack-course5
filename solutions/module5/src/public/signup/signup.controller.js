@@ -11,7 +11,7 @@ function SignUpController(MenuService, InfoService) {
   $ctrl.saved = false;
 
   $ctrl.checkFavoriteDish = function() {
-    if (!$ctrl.favoriteDish || $ctrl.favoriteDish === '' ) {
+    if (!$ctrl.favoriteDish) {
       $ctrl.dishNotFound = true;
       return;
     }
@@ -30,7 +30,7 @@ function SignUpController(MenuService, InfoService) {
     $ctrl.checkFavoriteDish().then(function() {
       InfoService.saveInfo($ctrl.firstName, $ctrl.lastName, $ctrl.email, $ctrl.phoneNumber, $ctrl.favoriteMenuItem);
       $ctrl.saved = true;
-    })
+    });
   }
 }
 

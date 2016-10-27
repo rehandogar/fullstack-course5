@@ -122,6 +122,10 @@ input.ng-valid {
 .well * {
   color: #222;
 }
+
+.invert-color {
+  color: #fff;
+}
 /* END SIGN UP VIEW */
 
 
