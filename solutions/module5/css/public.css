@@ -119,7 +119,7 @@ input.ng-touched.ng-invalid {
 input.ng-valid {
     border:1px solid green;
 }
-.well label {
+.well label, span, .invert-color {
   color: #222;
 }
 /* END SIGN UP VIEW */

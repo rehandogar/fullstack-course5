@@ -30,6 +30,18 @@ function routeConfig ($stateProvider) {
         }]
       }
     })
+    .state('public.info', {
+      url: '/info',
+      templateUrl: 'src/public/info/info.html',
+      controller: 'InfoController',
+      controllerAs: 'infoCtrl'
+    })
+    .state('public.signup', {
+      url: '/signup',
+      templateUrl: 'src/public/signup/signup.html',
+      controller: 'SignUpController',
+      controllerAs: 'signupCtrl'
+    })
     .state('public.menuitems', {
       url: '/menu/{category}',
       templateUrl: 'src/public/menu-items/menu-items.html',
@@ -40,18 +52,6 @@ function routeConfig ($stateProvider) {
           return MenuService.getMenuItems($stateParams.category);
         }]
       }
-    })
-    .state('public.signup', {
-      url: '/signup',
-      templateUrl: 'src/public/sign-up/sign-up.html',
-      controller: 'SignUpController',
-      controllerAs: 'signUpCtrl',
-    })
-    .state('public.profile', {
-      url: '/profile',
-      templateUrl: 'src/public/profile/profile.html',
-      controller: 'profileController',
-      controllerAs: 'profileCtrl',
     });
 }
 })();
